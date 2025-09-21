@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f2d9e6;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  position: relative;
+}
+
+.envelope {
+  width: 300px;
+  height: 200px;
+  background: #e74c3c;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 100px solid #c0392b;
+  transition: transform 0.8s;
+  transform-origin: top;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.letter {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: top 0.8s;
+}
+
+.envelope.open .letter {
+  top: 0;
+}
+
+.letter p {
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.5;
+  color: #2c3e50;
+}
